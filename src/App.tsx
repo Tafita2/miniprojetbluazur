@@ -1,14 +1,16 @@
-
-import './App.css'
+// src/App.tsx
+import './index.css'; // Contient les classes de Tailwind CSS
+import React from 'react';
+import Header from './components/Header';
+import HeroSection from './components/HeroSection';
 
 function App() {
   return (
-    <>
-     
-      <h1>Blu Azur</h1>
-      
-    </>
-  )
+    <div className="relative">
+      <Header />
+      <HeroSection />
+    </div>
+  );
 }
 
-export default App
+export default App;
