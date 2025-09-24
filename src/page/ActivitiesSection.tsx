@@ -1,5 +1,4 @@
 // src/components/ActivitiesSection.tsx
-import React from 'react';
 import { Ship, Mountain, Bike, Utensils, ShoppingBag, MapPin } from 'lucide-react'; 
 
 export default function ActivitiesSection() {
