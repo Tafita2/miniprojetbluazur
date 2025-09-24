@@ -1,14 +1,20 @@
 // src/components/ExperienceGridSection.tsx
 
 import bgImage from '../assets/montagne.png';
-// Importez les images pour les cartes. Remplacez par vos chemins d'accès.
-import imgCulturel from '../assets/StPaul.png'; // Un petit pot culturel/historique
-import imgSport from '../assets/StPaul.png'; // Image de sport nautique/montagne
-import imgGourmand from '../assets/StPaul.png'; // Image de nourriture/restaurant
-import imgNuit from '../assets/StPaul.png'; // Image de vie nocturne
+import imgCulturel from '../assets/StPaul.png';
+import imgSport from '../assets/StPaul.png';
+import imgGourmand from '../assets/StPaul.png';
+import imgNuit from '../assets/StPaul.png';
 
-// Définition des données pour les cartes d'expériences
-const experiences = [
+// Définition du type Experience
+type Experience = {
+  title: string;
+  description: string;
+  image: string;
+};
+
+// Données pour les cartes d'expériences
+const experiences: Experience[] = [
   {
     title: "Un patrimoine culturel",
     description: "Flânez dans les ruelles pavées de l'ancienne ville, visitez le Musée Archéologique et découvrez l'histoire riche et fascinante de la région, des Romains à aujourd'hui.",
@@ -27,14 +33,18 @@ const experiences = [
   {
     title: "L'évasion en pleine nature",
     description: "Laissez-vous charmer par la beauté naturelle des roches rouges de l'Estérel. Les sentiers de randonnée et de vélo offrent des vues imprenables sur la Méditerranée.",
-    image: imgNuit, // Image de paysage pour l'évasion
+    image: imgNuit,
   },
 ];
 
+// Définition des props du composant ExperienceCard
+type ExperienceCardProps = {
+  experience: Experience;
+};
 
-const ExperienceCard = ({ experience }) => (
+const ExperienceCard: React.FC<ExperienceCardProps> = ({ experience }) => (
   <div className="flex bg-white rounded-xl shadow-lg border border-gray-100 overflow-hidden transform transition duration-300 hover:shadow-2xl">
-    {/* Conteneur pour l'image (2/5 de la largeur) */}
+    {/* Conteneur pour l'image */}
     <div className="w-2/5 h-48 sm:h-auto overflow-hidden">
       <img
         src={experience.image}
@@ -43,37 +53,26 @@ const ExperienceCard = ({ experience }) => (
       />
     </div>
     
-    {/* Contenu textuel (3/5 de la largeur) */}
+    {/* Contenu textuel */}
     <div className="w-3/5 p-6 flex flex-col justify-center">
       <h3 className="text-lg font-bold text-gray-900 mb-2">{experience.title}</h3>
-      <p className="text-sm text-gray-600">
-        {experience.description}
-      </p>
+      <p className="text-sm text-gray-600">{experience.description}</p>
     </div>
   </div>
 );
-
 
 export default function ExperienceGridSection() {
   return (
     <section 
       className="relative h-[700px] bg-cover bg-center"
-      style={{ backgroundImage: `url(${bgImage})` }} // Image de fond
+      style={{ backgroundImage: `url(${bgImage})` }}
     >
       <div className="container mx-auto">
-        
-        {/* Titre de la section (souvent présent au-dessus de telles grilles) */}
-        {/* <h2 className="text-4xl font-bold mb-12 text-center text-gray-800">
-          Vivez Saint-Raphaël à votre rythme
-        </h2> */}
-        
-        {/* Grille de 2 colonnes pour les expériences */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {experiences.map((exp, index) => (
             <ExperienceCard key={index} experience={exp} />
           ))}
         </div>
-        
       </div>
     </section>
   );
