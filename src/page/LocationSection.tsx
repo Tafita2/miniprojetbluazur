@@ -1,7 +1,4 @@
 // src/components/LocationSection.tsx
-
-import React from 'react';
-
 export default function LocationSection() {
   return (
     <section className="relative h-[800px] bg-cover bg-center flex items-center justify-end p-20">
