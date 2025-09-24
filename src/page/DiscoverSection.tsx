@@ -1,7 +1,5 @@
 // src/components/DiscoverSection.tsx
 
-import React from 'react';
-
 // Importez les images nécessaires pour le collage et l'arrière-plan
 // Remplacez ces chemins par les vôtres si vous avez les fichiers.
 import bgImage from '../assets/PicDeLours5.png'; // Image de fond de rivière/chute d'eau
