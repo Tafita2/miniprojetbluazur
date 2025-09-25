@@ -1,4 +1,3 @@
-
 // Styles de base inspirés de l'image (couleurs et disposition)
 const styles = {
   // Conteneur principal (la partie bleue azur)
@@ -7,19 +6,19 @@ const styles = {
     color: 'white',
     padding: '150px 20px',
     display: 'flex',
-    justifyContent: 'space-around', // Espacement entre le logo et les contacts
+    justifyContent: 'space-around',
     alignItems: 'center',
-    flexWrap: 'wrap', // Assure un bon comportement sur petits écrans
+    flexWrap: 'wrap' as const, // correction TS
   },
   // Style pour le logo BLU AZUR
   logoContainer: {
-    textAlign: 'center',
-    marginBottom: '20px', // Ajout d'un petit espace en bas pour le mobile
+    textAlign: 'center' as const, // correction TS
+    marginBottom: '20px',
   },
   logoText: {
-    fontSize: '4em', // Grande taille pour BLU
+    fontSize: '4em',
     fontWeight: 'bold',
-    lineHeight: '0.9', // Réduit l'espace vertical
+    lineHeight: '0.9',
   },
   azurText: {
     fontSize: '1.2em',
@@ -28,7 +27,7 @@ const styles = {
   },
   // Conteneur des informations de contact
   contactContainer: {
-    textAlign: 'left',
+    textAlign: 'left' as const, // correction TS
   },
   contactTitle: {
     fontSize: '1.5em',
@@ -42,9 +41,9 @@ const styles = {
   },
   // Bande des droits d'auteur (la partie bleu foncé)
   copyrightBar: {
-    backgroundColor: '#204080', // Bleu foncé similaire à l'image
+    backgroundColor: '#204080',
     color: 'white',
-    textAlign: 'center',
+    textAlign: 'center' as const, // correction TS
     padding: '35px 20px',
     fontSize: '0.9em',
   },
@@ -67,21 +66,18 @@ const Footer = () => {
           <div style={styles.contactTitle}>Contactez-nous</div>
           
           <div style={styles.contactItem}>
-            {/* Icône d'e-mail (vous pouvez la remplacer par une icône réelle comme celle de Font Awesome) */}
             📧 &nbsp; info@bluazur.com
           </div>
           
           <div style={styles.contactItem}>
-            {/* Icône de téléphone */}
             📞 &nbsp; +1 555 555-5555
           </div>
           
           <div style={styles.contactItem}>
-            {/* Icône de Facebook */}
             <span style={{ marginRight: '20px' }}>
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
-                  <path d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.008 1.195-3.136 3.024-3.136.877 0 1.96.157 1.96.157v1.81h-1.14c-.933 0-1.114.587-1.114 1.185V8.05h2.03l-.328 2.007h-1.702v5.625C13.074 15.396 16 12.067 16 8.049z"/>
-                </svg>
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                <path d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.008 1.195-3.136 3.024-3.136.877 0 1.96.157 1.96.157v1.81h-1.14c-.933 0-1.114.587-1.114 1.185V8.05h2.03l-.328 2.007h-1.702v5.625C13.074 15.396 16 12.067 16 8.049z"/>
+              </svg>
             </span>
             @ BLU Azur
           </div>
