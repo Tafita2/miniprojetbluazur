@@ -143,7 +143,7 @@ const cardStyles = {
     marginBottom: '15px',
     opacity: 0.85,
   },
-  bgImage: (url: string, alt: string) => ({
+  bgImage: (url: string) => ({
     backgroundImage: url,
     backgroundSize: 'cover',
     backgroundPosition: 'center',
