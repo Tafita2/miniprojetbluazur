@@ -13,9 +13,28 @@ export default function LocationSection() {
         <p>
             Blu Azur est idéalement situé entre Saint-Tropez et Cannes, au cœur de l’une des plus belles stations balnéaires de France. Nos appartements se trouvent dans un domaine privé sécurisé, entouré de verdure, à quelques minutes à pied de la plage sablonneuse de Santa Lucia et de la marina. Proche du centre-ville de Saint-Raphaël, la résidence permet un accès facile aux boutiques, restaurants et animations locales. Une station d’arrêt d’autobus est située à la sortie du site, facilitant les déplacements, et une boulangerie à proximité vous offre du pain frais chaque matin pour bien commencer la journée.
         </p>
-      <button className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 w-fit">
-        Comment s’y rendre ?
-        </button>
+        <div className="cta-container mt-8">
+          <button className="bg-transparent text-[#4097FF] border-2 border-[#4097FF] px-4 py-2 rounded-[30px] text-[0.85em] font-bold cursor-pointer mt-[15px] inline-flex items-center gap-2 transition-all duration-300 ease-in-out">
+            Comment s’y rendre ?
+            <span
+              style={{
+                display: 'inline-flex',
+                margin: '10px',
+                justifyContent: 'center',
+                alignItems: 'center',
+                width: '20px',
+                height: '20px',
+                borderRadius: '50%',
+                border: '2px solid #4682B4',
+                color: '#4682B4',
+                fontWeight: 'bold',
+                fontSize: '0.85em',
+              }}
+            >
+              &gt;
+            </span>
+          </button>
+        </div>
       </div>
 
       {/* Colonne de carte à droite */}

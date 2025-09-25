@@ -14,7 +14,7 @@ export default function ActivitiesSection() {
   return (
     // Utilisation du dégradé et texte BLANC
     <section className="relative h-screen bg-cover bg-center flex items-center justify-center p-10" style={{ backgroundImage: "url('Piscine 4.png')" }}> 
-      <div className="container mx-auto text-center">
+      <div className="container mx-auto text-center text-white ">
         
         {/* Titre principal */}
         <h2 

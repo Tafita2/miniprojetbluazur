@@ -1,63 +1,143 @@
-import { useState } from "react"
-import { ChevronRight } from "lucide-react"
+// src/components/HeroPage.tsx
+import React, { useState } from 'react';
+import { ChevronRight } from "lucide-react";
+import { FaFacebookF, FaYoutube, FaTwitter, FaInstagram } from "react-icons/fa";
 
 // Import des images
-import img1 from "../assets/vacance.png"
-import img2 from "../assets/Piscine2.png"
+import img1 from "../assets/vacance.png";
+import img2 from "../assets/Piscine2.png";
 
-const images = [img1, img2]
+const images = [img1, img2];
 
-export default function MainSection() {
-  const [current, setCurrent] = useState(0)
+// --- Composant Navbar ---
+const Navbar: React.FC = () => {
+  return (
+    <nav className="navbar">
+      <div className="navbar-logo">
+        <span className="logo-blu">BLU</span>
+        <span className="logo-azur">AZUR</span>
+      </div>
+      <div className="navbar-links">
+        <a href="#apropos" className="active-link">À propos</a>
+        <a href="#localisation">Localisation</a>
+        <a href="#activites">Activités</a>
+        <button className="btn-reserve">Réservé</button>
+      </div>
+      <div className="navbar-menu-icon">
+        <div className="icon-bar"></div>
+        <div className="icon-bar"></div>
+        <div className="icon-bar"></div>
+      </div>
+    </nav>
+  );
+};
+
+// --- Composant SocialIcons ---
+const SocialIcons: React.FC = () => {
+  return (
+    <div className="social-icons">
+      <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">
+        <FaFacebookF size={20} />
+      </a>
+      <a href="https://youtube.com" target="_blank" rel="noopener noreferrer">
+        <FaYoutube size={20} />
+      </a>
+      <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">
+        <FaTwitter size={20} />
+      </a>
+      <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">
+        <FaInstagram size={20} />
+      </a>
+      <div className="line"></div>
+    </div>
+  );
+};
+
+
+// --- Composant MainSection ---
+const MainSection: React.FC = () => {
+  const [current, setCurrent] = useState(0);
 
   const nextImage = () => {
-    setCurrent((prev) => (prev === images.length - 1 ? 0 : prev + 1))
-  }
+    setCurrent((prev) => (prev === images.length - 1 ? 0 : prev + 1));
+  };
 
-  const nextIndex = (current + 1) % images.length
+  const currentImage = images[current];
 
   return (
-    <section className="relative h-screen bg-cover bg-center flex items-center justify-center p-10" style={{ backgroundImage: "url('fond.jpg')" }}>
-      <div className="grid grid-cols-3 gap-8 items-center">
-        {/* Colonne gauche : texte (1/3) */}
-        <div className="col-span-1 flex flex-col justify-center">
-          <h2 className="text-3xl font-bold mb-4">Votre évasion </h2>
-          <p className="text-gray-600 mb-4">
-            Blu Azur vous invite à découvrir le charme de Saint-Raphaël, une destination d’exception nichée entre Cannes et Saint-Tropez. Nos appartements tout équipés, situés dans un domaine privé sécurisé, offrent un cadre verdoyant et paisible, à quelques pas de la marina de Santa Lucia, des plages de sable fin et du centre-ville animé. Profitez d’un séjour alliant confort, sérénité et élégance au cœur de la Riviera française !
+    <section
+      className="relative h-screen bg-cover bg-center flex items-center justify-center p-10"
+      style={{
+        backgroundImage: `
+          linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)),
+          url('fond.jpg'),
+          url('Rectangle 9.png')
+        `,
+        backgroundBlendMode: "overlay",
+      }}
+    >
+      {/* Icônes sociales intégrées seulement dans cette section */}
+      <SocialIcons />
+
+      <div className="hero-content">
+        <div className="hero-text-container">
+          <h1>
+            <span className="block">Votre évasion</span>
+            <span className="block text-blue-300">sur la Côte d’Azur !</span>
+          </h1>
+          <p>
+            Blu Azur vous invite à découvrir le charme de Saint-Raphaël, une destination d’exception nichée entre Cannes et Saint-Tropez. Nos appartements tout équipés, situés dans un domaine privé sécurisé... Profitez d’un séjour alliant confort, sérénité et élégance au cœur de la Riviera française.
           </p>
-          <button className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 w-fit">
-            En savoir plus
-          </button>
+          <div className="cta-container mt-8">
+            <button className="bg-transparent text-[#ffffff] border-2 border-[#ffffff] px-4 py-2 rounded-[30px] text-[0.85em] font-bold cursor-pointer mt-[15px] inline-flex items-center gap-2 transition-all duration-300 ease-in-out">
+              Réservez dès maintenant votre séjour
+              <span
+                style={{
+                  display: 'inline-flex',
+                  margin: '10px',
+                  justifyContent: 'center',
+                  alignItems: 'center',
+                  width: '20px',
+                  height: '20px',
+                  borderRadius: '50%',
+                  border: '2px solid #ffffff',
+                  color: '#ffffff',
+                  fontWeight: 'bold',
+                  fontSize: '0.85em',
+                }}
+              >
+                &gt;
+              </span>
+            </button>
+          </div>
         </div>
 
-        {/* Colonne droite : images (2/3) */}
-        <div className="col-span-2 flex justify-between items-center max-w-full overflow-hidden">
-    {/* Image principale */}
-    <img
-        src={images[current]}
-        alt={`Slide ${current + 1}`}
-        className="rounded-lg shadow-lg object-contain max-h-[467px] flex-shrink-0 transition-transform duration-700 ease-in-out hover:scale-105"
-    />
-
-    {/* Image sombre */}
-      <div className="relative">
-          <img
-          src={images[nextIndex]}
-          alt="Next Slide"
-          className="w-[349px] h-[467.9px] object-cover opacity-50 rounded-lg"
-          />
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
+        <div
+          className="hero-image-overlay"
+          style={{ backgroundImage: `url(${currentImage})` }}
+          onClick={nextImage}
+        >
           <button
-              onClick={nextImage}
-              className="text-white text-4xl hover:text-blue-500"
+            className="overlay-chevron-right"
+            aria-label="Prochaine image"
+            onClick={(e) => { e.stopPropagation(); nextImage(); }}
           >
-              <ChevronRight className="w-12 h-12" />
+            <ChevronRight className="w-6 h-6" />
           </button>
-          </div>
-      </div>
-    </div>
-
+        </div>
       </div>
     </section>
-  )
-}
+  );
+};
+
+// --- HeroPage ---
+const HeroPage: React.FC = () => {
+  return (
+    <div className="hero-header relative">
+      <Navbar />
+      <MainSection />
+    </div>
+  );
+};
+
+export default HeroPage;

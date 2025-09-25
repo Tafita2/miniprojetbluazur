@@ -15,7 +15,7 @@ export default function ReservationSection() {
         </div>
 
         {/* Contenu centré */}
-        <div className="relative z-10 w-full px-6">
+        <div className="relative z-10 w-full text-white px-6">
           <div className="mx-auto max-w-[1100px] text-center">
             <h1 className="hero-title">Réservations</h1>
 
