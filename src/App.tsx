@@ -1,7 +1,7 @@
 // src/App.tsx
 
 import React from 'react';
-import MainSection from './components/MainSection'; // Assurez-vous du bon chemin
+import Header from './components/Header'; // Assurez-vous du bon chemin
 import AboutSection from './page/AboutPage';
 import ActivitiesSection from './page/ActivitiesSection';
 import LocationSection from './page/LocationSection';
@@ -16,7 +16,7 @@ import Footer from './components/Footer';
 const App: React.FC = () => {
   return (
     <div className="relative">
-      <MainSection />
+      <Header />
       <AboutSection/>
       <ActivitiesSection/>
       <LocationSection/>
