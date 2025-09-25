@@ -8,7 +8,10 @@ import AboutSection from './page/AboutPage';
 import ActivitiesSection from './page/ActivitiesSection';
 import LocationSection from './page/LocationSection';
 import DiscoverSection from './page/DiscoverSection';
-import ExperienceGridSection from './page/ExperienceGridSection';
+// import ExperienceGridSection from './page/ExperienceGridSection';
+import ReservationSection from './page/ReservationSection';
+import Footer from './components/Footer';
+import CardsPage from './page/CardsPage';
 
 function App() {
   return (
@@ -19,7 +22,10 @@ function App() {
       <ActivitiesSection/>
       <LocationSection/>
       <DiscoverSection/>
-      <ExperienceGridSection/>
+      {/* <ExperienceGridSection/> */}
+      <CardsPage/>
+      <ReservationSection/>
+      <Footer/>
     </div>
   );
 }

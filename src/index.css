@@ -13,6 +13,104 @@ a:hover {
   color: #535bf2;
 }
 
+.hero-title {
+  font-weight: 600;
+  line-height: 1.03;
+  color: #ffffff !important;
+  font-size: clamp(28px, 4.2vw, 40px);
+  /* responsive */
+  margin: 0 auto 0.5rem;
+  max-width: 700px;
+  text-shadow: 0 6px 20px rgba(0, 0, 0, 0.45);
+  letter-spacing: 0.2px;
+  text-wrap: balance;
+}
+
+.hero-subtitle {
+  margin: 0 auto 1.25rem;
+  color: rgba(255, 255, 255, 0.95) !important;
+  font-size: clamp(14px, 1.6vw, 18px);
+  max-width: 1000px;
+  line-height: 1.5;
+  opacity: 0.95;
+}
+
+/* Bouton principal */
+.cta-btn {
+  background: linear-gradient(90deg, #2563EB 0%, #6366F1 100%);
+  color: #fff !important;
+  padding: 12px 18px;
+  border-radius: 999px;
+  box-shadow: 0 10px 30px rgba(8, 16, 63, 0.35);
+  font-weight: 700;
+  font-size: 15px;
+  border: none;
+  cursor: pointer;
+  transition: transform .18s ease, box-shadow .18s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Hover/active */
+.cta-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 18px 48px rgba(8, 16, 63, 0.45);
+}
+
+.cta-btn:active {
+  transform: translateY(-1px);
+}
+
+/* Cercle autour de l'icône */
+.cta-icon {
+  width: 30px;
+  height: 30px;
+  min-width: 40px;
+  border-radius: 999px;
+  background: #ffffff;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #2563eb;
+  /* couleur de la flèche */
+  box-shadow: 0 6px 16px rgba(2, 6, 23, 0.18);
+}
+
+/* Ajustements pour grands écrans */
+@media (min-width: 1024px) {
+  .hero-title {
+    font-size: 48px;
+    max-width: 709px;
+    height: auto;
+  }
+
+  .hero-subtitle {
+    font-size: 18px;
+    max-width: 1000px;
+  }
+
+  /* .cta-btn {
+    padding: 16px 28px;
+    font-size: 16px;
+    min-width: 480px;
+  } */
+
+  /* .cta-icon {
+    width: 40px;
+    height: 48px;
+    min-width: 48px;
+  } */
+}
+
+/* Petit fix si d'autres styles écrasent la couleur : */
+section .hero-subtitle,
+section .hero-title,
+section .cta-btn {
+  color: inherit;
+}
+
+
 /* 
 :root {
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;

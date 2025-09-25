@@ -1,7 +1,11 @@
 // src/components/LocationSection.tsx
+import bgImage from '../assets/map.png';
 export default function LocationSection() {
   return (
-    <section className="relative h-[800px] bg-cover bg-center flex items-center justify-end p-20">
+    <section 
+      className="relative h-[500px] bg-cover bg-center"
+      style={{ backgroundImage: `url(${bgImage})` }} // Image de fond
+    >
      <div className="min-h-screen flex flex-row p-8 gap-8">
       {/* Colonne de texte à gauche */}
       <div className="w-1/2 bg-gray-100 p-6 rounded shadow">
