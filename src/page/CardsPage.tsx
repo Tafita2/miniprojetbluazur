@@ -250,7 +250,7 @@ const Card: React.FC<CardProps> = ({ title, description, linkText, buttonText, i
 
   return (
     <div style={cardStyles.card} onMouseEnter={() => setIsHovered(true)} onMouseLeave={() => setIsHovered(false)}>
-      <div style={cardStyles.bgImage(imageUrl, altText)} role="img" aria-label={altText} />
+      <div style={cardStyles.bgImage(imageUrl)} role="img" aria-label={altText} />
       {isFirst ? redBoxContent : normalContent}
       {isFirst && <div style={finalRedOverlayStyle}></div>}
     </div>
